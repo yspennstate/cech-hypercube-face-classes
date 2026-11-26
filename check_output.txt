@@ -1,0 +1,42 @@
+target r=2: Q_2 full set in a generator? False; Q_1? True
+target r=4: Q_3 full set in a generator? False; Q_2? True
+target r=6: Q_4 full set in a generator? False; Q_3? True
+target r=3: Q_3 full set in a generator? False; Q_2? True
+target r=5: Q_4 full set in a generator? False; Q_3? True
+target r=7: Q_5 full set in a generator? False; Q_4? True
+even  p=2 n=3 r=2 mode=even      faces=  6 (expect   6) simplicial-fails=0 other-face-fails=0
+even  p=2 n=3 r=2 mode=clamp     faces=  6 (expect   6) simplicial-fails=0 other-face-fails=6
+even  p=2 n=3 r=2 mode=even_rand faces=  6 (expect   6) simplicial-fails=0 other-face-fails=0
+even  p=2 n=4 r=2 mode=even      faces= 24 (expect  24) simplicial-fails=0 other-face-fails=0
+even  p=2 n=4 r=2 mode=clamp     faces= 24 (expect  24) simplicial-fails=0 other-face-fails=72
+even  p=2 n=4 r=2 mode=even_rand faces= 24 (expect  24) simplicial-fails=0 other-face-fails=0
+even  p=2 n=5 r=2 mode=even      faces= 80 (expect  80) simplicial-fails=0 other-face-fails=0
+even  p=2 n=5 r=2 mode=clamp     faces= 80 (expect  80) simplicial-fails=0 other-face-fails=560
+even  p=2 n=5 r=2 mode=even_rand faces= 80 (expect  80) simplicial-fails=0 other-face-fails=0
+even  p=3 n=4 r=4 mode=even      faces=  8 (expect   8) simplicial-fails=0 other-face-fails=0
+even  p=3 n=4 r=4 mode=clamp     faces=  8 (expect   8) simplicial-fails=0 other-face-fails=8
+even  p=3 n=4 r=4 mode=even_rand faces=  8 (expect   8) simplicial-fails=0 other-face-fails=0
+even  p=3 n=5 r=4 mode=even      faces= 40 (expect  40) simplicial-fails=0 other-face-fails=0
+even  p=3 n=5 r=4 mode=clamp     faces= 40 (expect  40) simplicial-fails=0 other-face-fails=120
+even  p=3 n=5 r=4 mode=even_rand faces= 40 (expect  40) simplicial-fails=0 other-face-fails=0
+even  p=3 n=6 r=4 mode=even      faces=160 (expect 160) simplicial-fails=0 other-face-fails=0
+even  p=3 n=6 r=4 mode=clamp     faces=160 (expect 160) simplicial-fails=0 other-face-fails=1120
+even  p=3 n=6 r=4 mode=even_rand faces=160 (expect 160) simplicial-fails=0 other-face-fails=0
+even  p=4 n=5 r=6 mode=even      faces= 10 (expect  10) simplicial-fails=0 other-face-fails=0
+even  p=4 n=5 r=6 mode=clamp     faces= 10 (expect  10) simplicial-fails=0 other-face-fails=10
+even  p=4 n=5 r=6 mode=even_rand faces= 10 (expect  10) simplicial-fails=0 other-face-fails=0
+even  p=4 n=6 r=6 mode=even      faces= 60 (expect  60) simplicial-fails=0 other-face-fails=0
+even  p=4 n=6 r=6 mode=clamp     faces= 60 (expect  60) simplicial-fails=0 other-face-fails=180
+even  p=4 n=6 r=6 mode=even_rand faces= 60 (expect  60) simplicial-fails=0 other-face-fails=0
+odd   p=3 n=4 r=3 mode=odd       faces=  8 (expect   8) simplicial-fails=0 other-face-fails=0
+odd   p=3 n=4 r=3 mode=clamp     faces=  8 (expect   8) simplicial-fails=0 other-face-fails=8
+odd   p=3 n=5 r=3 mode=odd       faces= 40 (expect  40) simplicial-fails=0 other-face-fails=0
+odd   p=3 n=5 r=3 mode=clamp     faces= 40 (expect  40) simplicial-fails=0 other-face-fails=120
+odd   p=3 n=6 r=3 mode=odd       faces=160 (expect 160) simplicial-fails=0 other-face-fails=0
+odd   p=3 n=6 r=3 mode=clamp     faces=160 (expect 160) simplicial-fails=0 other-face-fails=1120
+odd   p=4 n=5 r=5 mode=odd       faces= 10 (expect  10) simplicial-fails=0 other-face-fails=0
+odd   p=4 n=5 r=5 mode=clamp     faces= 10 (expect  10) simplicial-fails=0 other-face-fails=10
+odd   p=4 n=6 r=5 mode=odd       faces= 60 (expect  60) simplicial-fails=0 other-face-fails=0
+odd   p=4 n=6 r=5 mode=clamp     faces= 60 (expect  60) simplicial-fails=0 other-face-fails=180
+odd   p=5 n=6 r=7 mode=odd       faces= 12 (expect  12) simplicial-fails=0 other-face-fails=0
+odd   p=5 n=6 r=7 mode=clamp     faces= 12 (expect  12) simplicial-fails=0 other-face-fails=12

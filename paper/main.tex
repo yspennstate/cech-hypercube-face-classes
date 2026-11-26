@@ -1,0 +1,235 @@
+\documentclass[11pt]{amsart}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=1.15in]{geometry}
+\usepackage[hidelinks]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\arxiv}[1]{\href{https://arxiv.org/abs/#1}{arXiv:\nolinkurl{#1}}}
+\newcommand{\N}{\mathcal{N}}
+\newcommand{\cl}[2]{N_{#1}[#2]}
+\setlength{\emergencystretch}{2.5em}
+\makeatletter\g@addto@macro\UrlBreaks{\do-}\makeatother
+
+\begin{document}
+
+\title[Independent face classes for \v{C}ech complexes]{Independent face classes in \v{C}ech complexes of hypercube
+graphs}
+\author{Yitzchak Shmalo}
+\date{26 November 2026}
+\hypersetup{pdftitle={Independent face classes in \v{C}ech complexes of hypercube graphs},pdfauthor={Yitzchak Shmalo}}
+\address{Einstein Institute of Mathematics, The Hebrew University of Jerusalem, Jerusalem, Israel}
+\email{yspennstate@gmail.com}
+\subjclass[2020]{55N31, 55U10, 05C12}
+\keywords{\v{C}ech complex, hypercube graph, nerve, homology, retraction}
+
+\begin{abstract}
+Let $\N(G,r)$ be the \v{C}ech complex of a graph $G$ at scale $r$. For the hypercube graph $Q_n$ and the scales
+$r=2p-2$ with $p\ge2$ and $r=2p-3$ with $p\ge3$, at which $Q_p$ is the smallest cube whose complex is not a simplex, we
+show that the $2^{n-p}\binom np$ coordinate $p$-faces of $Q_n$ carry independent split copies of the reduced homology of
+$\N(Q_p,r)$, with any coefficients. The retraction onto a face is the coordinate clamp of Adams, Shukla and Singh,
+corrected by one bit so that it sends every other face into a simplex. Consequently the homology of $\N(Q_n,2p-2)$ has rank at
+least $2^{n-p}\binom np$ in degree $2^p-2$, and $H_4(\N(Q_n,3))$ has rank at least $3\cdot2^{n-3}\binom n3$, which equals the
+computed values $24$ and $120$ for $n=4,5$.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+
+Let $G$ be a finite connected simple graph, and give its geometric realization the shortest path metric in which every
+edge is isometric to $[0,1]$. For $r\ge0$ the \v{C}ech complex $\N(G,r)$ has vertex set $V(G)$, and a set of vertices is
+a simplex when the closed balls of radius $r/2$ about them have a common point. Since $\N(G,r)=\N(G,\lfloor r\rfloor)$
+for all real $r\ge0$~\cite[Section~2]{ASS}, only integer scales matter. The hypercube graph $Q_n$ has the words in
+$\{0,1\}^n$ as vertices, with edges between words at Hamming distance one.
+
+Adams, Shukla and Singh~\cite{ASS} studied $\N(Q_n,r)$; among other results they computed small Betti numbers by
+computer~\cite[Table~1]{ASS} and showed that clamping the coordinates outside an $m$-dimensional face gives a retraction
+of $\N(Q_n,3)$ onto the complex of that face~\cite[Lemma~5.7]{ASS}, from which $H_3$ and $H_4$ of $\N(Q_n,3)$ are
+nonzero for all $n\ge4$~\cite[Theorem~5.13]{ASS}. For Vietoris--Rips complexes of hypercube graphs, Adams and
+Virk~\cite[Theorem~6.4]{AV} proved that the homology of the smallest cube carrying a nonzero class propagates: if $p$ is
+least with $H_q(\mathrm{VR}(Q_p;r))\ne0$, then the rank of $H_q(\mathrm{VR}(Q_n;r))$ is at least
+$\sum_{i=p}^n2^{i-p}\binom{i-1}{p-1}$ times that of $H_q(\mathrm{VR}(Q_p;r))$. They asked which propagation results
+hold for \v{C}ech complexes of hypercube graphs~\cite[Question~8.8]{AV}. The following is such a result.
+
+For a set $S$ of $p$ coordinates and a word $b\in\{0,1\}^{[n]\setminus S}$, the coordinate $p$-face $F=F(S,b)$ is the
+set of words that agree with $b$ off $S$. Restriction to $S$ is a bijection $\pi_F\colon F\to\{0,1\}^p$ that preserves
+Hamming distance, so it identifies $\N(F,r)$, the full subcomplex of $\N(Q_n,r)$ on $F$, with $\N(Q_p,r)$; let
+$i_F\colon\N(Q_p,r)\to\N(Q_n,r)$ be the resulting inclusion. There are $2^{n-p}\binom np$ coordinate $p$-faces.
+
+\begin{theorem}\label{thm:main}
+Let $r=2p-2$ with $p\ge2$, or $r=2p-3$ with $p\ge3$, and let $n\ge p$. For every coordinate $p$-face $F$ of $Q_n$ there
+is a simplicial map $R_F\colon\N(Q_n,r)\to\N(Q_p,r)$ with $R_F\circ i_F=\mathrm{id}$ such that, for every other
+coordinate $p$-face $F'$, the image of $R_F\circ i_{F'}$ lies in a single simplex. Consequently, for every abelian group
+$M$ and every $q$, the map
+\[
+\sum_F (i_F)_*\colon\ \bigoplus_F\widetilde H_q(\N(Q_p,r);M)\to\widetilde H_q(\N(Q_n,r);M),
+\]
+the sum over all $2^{n-p}\binom np$ coordinate $p$-faces, is split injective, with left inverse $\bigoplus_F(R_F)_*$.
+\end{theorem}
+
+The consequence follows from the first part at once: $(R_F)_*(i_{F'})_*$ is the identity for $F'=F$, and for $F'\ne F$
+it factors through the reduced homology of a simplex, which is zero.
+
+\begin{corollary}\label{cor:rank}
+For $p\ge2$ and $n\ge p$, the group $H_{2^p-2}(\N(Q_n,2p-2);\mathbb Z)$ contains a direct summand isomorphic to
+$\mathbb Z^{2^{n-p}\binom np}$. For $n\ge3$, $H_4(\N(Q_n,3);\mathbb Z)$ contains a direct summand of rank
+$3\cdot2^{n-3}\binom n3$.
+\end{corollary}
+
+The first statement uses Lemma~\ref{lem:targets}, by which $\N(Q_p,2p-2)$ is the boundary of a simplex with $2^p$
+vertices, a sphere of dimension $2^p-2$. The second uses $\N(Q_3,3)\simeq\bigvee_3S^4$~\cite[Section~5]{ASS}, a
+computation the authors attribute to Conant and Thistlethwaite~\cite{CT}. At scale three the bound is $24$ for $n=4$
+and $120$ for $n=5$, which are the values of $\beta_4$ in~\cite[Table~1]{ASS}. At scales two and four it lies below the
+computed values: $6,24$ against $7,31$ for $\beta_2(\N(Q_n,2))$ with $n=3,4$, and $8,40$ against $10,60$ for
+$\beta_6(\N(Q_n,4))$ with $n=4,5$. The count $2^{n-p}\binom np$ includes every $p$-face; the sum in~\cite[Theorem~6.4]{AV}
+counts the faces whose fixed coordinates above the largest free coordinate are $0$, which for $n=4$, $p=3$ are $7$ of the
+$8$. That $\widetilde H_{2^p-2}(\N(Q_n,2p-2))$ is nonzero for $n\ge p$, the even half of~\cite[Question~7.2]{ASS} in this
+degree, already follows from the clamp of~\cite[Lemma~5.7]{ASS}, a simplicial retraction onto the complex of one face;
+what Theorem~\ref{thm:main} adds is the rank.
+
+At odd scales the theorem is informative exactly when $\widetilde H_*(\N(Q_p,2p-3))\ne0$. By Lemma~\ref{lem:targets} the
+simplices of $\N(Q_p,2p-3)$ are the vertex sets whose complement contains an edge, so it is the Alexander dual of the
+independence complex of $Q_p$. For $p=3$ its homology is $\mathbb Z^3$ in degree $4$~\cite{CT}. Nonvanishing for $p\ge4$ is not
+proved here.
+
+\begin{remark}
+The hypothesis $p\ge3$ at odd scales cannot be dropped. At scale one, $\N(Q_n,1)$ is the graph $Q_n$ itself, and the
+boundaries of the six squares of $Q_3$ are dependent in $H_1$, which has rank $12-8+1=5$.
+\end{remark}
+
+\section{The complexes of the face}
+
+Write $d$ for Hamming distance and $\cl k c=\{w:d(w,c)\le k\}$. By~\cite[Lemma~2.2]{ASS}, a vertex set of a graph is a
+simplex of $\N(G,2k)$ exactly when it lies in some $\cl kc$, and a simplex of $\N(G,2k+1)$ exactly when it lies in
+$\cl ku\cup\cl kv$ for some edge $uv$. A vertex map between graphs therefore induces a simplicial map at scale $r$ as
+soon as it sends each of these sets into a simplex. For a word $y$ write $\bar y$ for its antipode, and for an edge
+$e=uv$ write $d(w,e)=\min(d(w,u),d(w,v))$ and $\bar e=\bar u\bar v$.
+
+\begin{lemma}\label{lem:targets}
+Let $p\ge2$. A set of words in $\{0,1\}^p$ is a simplex of $\N(Q_p,2p-2)$ if and only if it misses some word, and a
+simplex of $\N(Q_p,2p-3)$ if and only if it misses both ends of some edge. The complexes $\N(Q_{p-1},2p-2)$ and
+$\N(Q_{p-1},2p-3)$ are simplices.
+\end{lemma}
+
+\begin{proof}
+$\cl{p-1}c$ is everything except $\bar c$. If $uv$ is an edge varying coordinate $i$ and $w$ differs from $u$ in $h$
+coordinates other than $i$, then $d(w,uv)=h$ and $d(w,\bar u\bar v)=p-1-h$. So the complement of $\cl{p-2}u\cup\cl{p-2}v$
+is the edge $\bar u\bar v$. In $Q_{p-1}$ every word lies within $p-1$ of any vertex and within $p-2$ of any edge.
+\end{proof}
+
+\section{Proof of Theorem~\ref{thm:main}}
+
+Fix $F=F(S,b)$ and write $\pi=\pi_F$, extended to all of $Q_n$ by restriction to $S$; then $d(\pi x,\pi y)\le d(x,y)$, and
+$d(\pi x,\pi y)\le d(x,y)-1$ when $x\in F$ and $y\notin F$. We define $R_F(x)=\pi x$ for $x\in F$ and
+$R_F(x)=\kappa(\pi x)$ for $x\notin F$, where $\kappa\colon\{0,1\}^p\to\{0,1\}^p$ changes at most one bit and is chosen
+below; $R_F\circ i_F$ is the identity. The image of a set $A$ splits into the inside part $\pi(A\cap F)$ and the outside
+part $\kappa\pi(A\setminus F)$, which lies in the image $K$ of $\kappa$. In both cases the argument for another face
+$F'=F(S',b')$ starts from the same observation: if $S'=S$ then $b'\ne b$ and $F\cap F'=\emptyset$; otherwise $S'$
+contains a coordinate $i\in S$, and $\pi(F\cap F')$ lies in the facet $\{y:y_i=b'_i\}$ of $\{0,1\}^p$.
+
+\subsection*{Even scales}
+Let $r=2p-2$ with $p\ge2$, so $k=p-1$. Let $\kappa$ fix the words of even weight and flip the first coordinate of the
+others, so $K$ is the set of even words. Consider a generator $\cl kc$ and put $a=\pi c$.
+
+If $c\in F$, then $d(\pi x,a)\le k$ for $x\in F$, and for $x\notin F$ we have $d(\pi x,a)\le k-1$ and hence
+$d(\kappa\pi x,a)\le k$. The image lies in $\cl ka$, which misses $\bar a$.
+
+If $c\notin F$, the inside part lies within $k-1=p-2$ of $a$ and so misses the ball $\cl1{\bar a}$. This ball contains a
+word of odd weight, which the outside part misses as well.
+
+For $F'\ne F$, the image of $F'$ consists of even words and, if $F\cap F'\ne\emptyset$, of words in a facet
+$\{y_i=b'_i\}$. The opposite facet is a cube of dimension $p-1\ge1$ and contains a word of odd weight, which is missed.
+
+\subsection*{Odd scales}
+Let $r=2p-3$ with $p\ge3$, so $k=p-2$. Choose three coordinates of $\{0,1\}^p$, call them marked, and let $K$ be the set of
+words whose three marked bits are equal. Let $\kappa$ fix $K$ and flip the minority marked bit of every other word. We use
+three facts about $K$.
+\begin{enumerate}
+\item Every word has a neighbour outside $K$: flip a marked bit of a word in $K$, or a majority marked bit of a word
+outside $K$.
+\item For every edge $e$, the set $\cl1u\cup\cl1v$ ($e=uv$) contains both ends of an edge outside $K$. If the ends of $e$
+lie outside $K$ this is $e$. Otherwise the two marked bits that $e$ does not change are equal on both ends of $e$
+(if $e$ changes an unmarked coordinate, choose any two of the three); flipping one of them in both ends gives a parallel
+edge whose ends lie outside $K$.
+\item Every facet $\{y_i=c\}$ contains an edge outside $K$. If $i$ is marked, set a second marked bit to $1-c$ and let
+the third vary. If $i$ is unmarked, set two marked bits to $0$ and $1$ and let the third vary.
+\end{enumerate}
+Consider a generator $A=\cl ku\cup\cl kv$, where the edge $e=uv$ changes coordinate $j$.
+
+If $j\in S$ and $u,v\in F$, then $\pi e$ is an edge, the inside part lies within $k$ of $\pi e$, and the outside part lies
+within $k-1$ of $\pi e$ before $\kappa$ and within $k$ after. The image lies in $\cl k{\pi u}\cup\cl k{\pi v}$.
+
+If $j\in S$ and $u,v\notin F$, the inside part lies within $k-1=p-3$ of the edge $\pi e$, hence at distance at least $2$
+from the opposite edge $\bar u'\bar v'$, where $\pi e=u'v'$, by the identity in the proof of Lemma~\ref{lem:targets}.
+So it misses $\cl1{\bar u'}\cup\cl1{\bar v'}$. By fact~2 this set contains an edge outside $K$, and both of its ends are
+missed by the image.
+
+If $j\notin S$, then $\pi u=\pi v=z$ and every word of $\pi(A)$ lies within $k$ of $z$, so the image lies within
+$k+1=p-1$ of $z$ and misses $\bar z$. The inside part lies within $p-2$ of $z$ and misses the neighbours of $\bar z$.
+By fact~1 some neighbour of $\bar z$ lies outside $K$; it is missed by the image, and so is the edge from it to $\bar z$.
+
+In every case $A$ is sent to a simplex, so $R_F$ is simplicial. For $F'\ne F$, the image of $F'$ consists of words of $K$
+and, if $F\cap F'\ne\emptyset$, of words in a facet $\{y_i=b'_i\}$. By fact~3 the opposite facet contains an edge outside
+$K$, and both of its ends are missed. This completes the proof of Theorem~\ref{thm:main}.
+
+\begin{remark}
+Without the correction, $R_F=\pi$ is the clamp of~\cite[Lemma~5.7]{ASS}. It is a graph map and is simplicial at every
+scale, but it maps every face $F'$ parallel to $F$ onto all of $\{0,1\}^p$, which is not a simplex; the one-bit
+correction is what makes the copies from different faces independent.
+\end{remark}
+
+\section*{Acknowledgements and funding}
+This work was done by AI agents, Claude (Anthropic) and Codex (OpenAI), connected to Math Brain~\cite{MathBrainRepo}
+and working together inside the Brain framework~\cite{BrainFramework}, a shared, persistent memory in which the agents
+record claims, proofs, failed attempts and methods, retrieve one another's results, coordinate who works on what, and
+audit each other's work. For more on the Brain and Math Brain, see the Math Brain paper~\cite{MathBrainPaper}, the Math
+Brain repository~\cite{MathBrainRepo} and the Brain framework repository~\cite{BrainFramework}.
+
+The research presented in this paper was supported by the European Research Council (ERC) under the European Union's
+Horizon Europe research and innovation programme (grant agreement No.~101041711), by the Simons Foundation as part of
+the Collaboration on the Mathematical and Scientific Foundations of Deep Learning, by Heights Labs, by Convex Nexus
+Capital, by the Israel Science Foundation (grant number 2258/19), and by the Israel Science Foundation (ISF Grant
+4101/25).
+
+\section*{Declaration of competing interest}
+The author holds equity in Heights Labs and in Convex Nexus Capital and has a management role at Convex Nexus Capital.
+These entities are included in the funding declaration above.
+
+\section*{Data availability}
+No data were generated or analysed in this work. A Python script that checks, for every coordinate $p$-face of $Q_n$
+in fourteen cases $(p,n)$ with $n\le6$, eight at even scale and six at odd scale, that $R_F$ is simplicial on the
+generators of~\cite[Lemma~2.2]{ASS} and that every other face is sent into one simplex, and that the uncorrected clamp
+fails the second test, is \texttt{code/check\_face\_retractions.py} at
+\url{https://github.com/yspennstate/cech-hypercube-face-classes/tree/v1.0}.
+
+\section*{Declaration of generative AI and AI-assisted technologies}
+This paper is part of a research project on AI proving problems. Codex agents (OpenAI) produced the proof, and Claude
+agents (Anthropic) checked the proof and the references and wrote the manuscript. The question is due to Adams and
+Virk~\cite{AV}, the face retraction at scale three is due to Adams, Shukla and Singh~\cite{ASS}, and the computation
+of $\N(Q_3,3)$ is due to Conant and Thistlethwaite~\cite{CT}. The author directed the work and is responsible for the
+content of the paper and for decisions concerning its dissemination.
+
+\begin{thebibliography}{9}
+\bibitem{ASS} H.~Adams, S.~Shukla and A.~Singh, \emph{\v{C}ech complexes of hypercube graphs}, Homology Homotopy Appl.
+\textbf{27} (2025), no.~1, 83--105, \href{https://doi.org/10.4310/HHA.2025.v27.n1.a6}{doi:10.4310/HHA.2025.v27.n1.a6};
+\arxiv{2212.05871}. Numbered results are cited as in the arXiv version.
+\bibitem{AV} H.~Adams and \v{Z}.~Virk, \emph{Lower bounds on the homology of Vietoris--Rips complexes of hypercube
+graphs}, Bull. Malays. Math. Sci. Soc. \textbf{47} (2024), no.~3, Paper No.~72,
+\href{https://doi.org/10.1007/s40840-024-01663-x}{doi:10.1007/s40840-024-01663-x}; \arxiv{2309.06222}.
+\bibitem{CT} J.~Conant and O.~Thistlethwaite, \emph{Boolean formulae, hypergraphs and combinatorial topology}, Topology
+Appl. \textbf{157} (2010), no.~16, 2449--2461.
+\bibitem{MathBrainRepo} Y.~Shmalo, \emph{Math Brain: public snapshot, code and tests}, 2026,
+\url{https://github.com/yspennstate/math-brain-public/tree/5427734deee9be643d6dfbdd5e7d4baeeefe4a4a}.
+\bibitem{MathBrainPaper} Y.~Shmalo, \emph{Math Brain: shared, auditable memory for multi-agent mathematical
+research}, 2026, \href{https://doi.org/10.5281/zenodo.24150837}{doi:10.5281/zenodo.24150837},
+\url{https://github.com/yspennstate/math-brain-public/tree/5427734deee9be643d6dfbdd5e7d4baeeefe4a4a/papers/math-brain-2026-10-24}.
+\bibitem{BrainFramework} Y.~Shmalo, \emph{Brain Framework}, public software repository, 2026,
+\url{https://github.com/yspennstate/brain-framework-public/tree/46b935d26d5a2893f7790b60466387dd8da47ef5}.
+\end{thebibliography}
+
+\end{document}
