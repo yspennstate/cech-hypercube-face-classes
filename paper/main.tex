@@ -96,8 +96,10 @@ null-homotopic for all $n$ and $r$; that result says where these classes die, at
 
 At odd scales the theorem is informative exactly when $\widetilde H_*(\N(Q_p,2p-3))\ne0$. By Lemma~\ref{lem:targets} the
 simplices of $\N(Q_p,2p-3)$ are the vertex sets whose complement contains an edge, so it is the Alexander dual of the
-independence complex of $Q_p$. For $p=3$ its homology is $\mathbb Z^3$ in degree $4$~\cite{CT}. Nonvanishing for $p\ge4$ is not
-proved here.
+independence complex of $Q_p$. For $p=3$ its homology is $\mathbb Z^3$ in degree $4$~\cite{CT}. For every $p\ge3$ the
+group $\widetilde H_q(\N(Q_p,2p-3);\mathbb Z)$ with $q=3\cdot2^{p-2}-2$ has a free direct summand of rank at least
+$3$~\cite[Theorem~1.2]{OddScales}, so by Theorem~\ref{thm:main} the group $\widetilde H_q(\N(Q_n,2p-3);\mathbb Z)$ has a
+free direct summand of rank at least $3\cdot2^{n-p}\binom np$ for every $n\ge p$, as noted in~\cite[Section~1]{OddScales}.
 
 \begin{remark}
 The hypothesis $p\ge3$ at odd scales cannot be dropped. At scale one, $\N(Q_n,1)$ is the graph $Q_n$ itself, and the
@@ -207,7 +209,7 @@ No data were generated or analysed in this work. A Python script that checks, fo
 in fourteen cases $(p,n)$ with $n\le6$, eight at even scale and six at odd scale, that $R_F$ is simplicial on the
 generators of~\cite[Lemma~2.2]{ASS} and that every other face is sent into one simplex, and that the uncorrected clamp
 fails the second test, is \texttt{code/check\_face\_retractions.py} at
-\url{https://github.com/yspennstate/cech-hypercube-face-classes/tree/v1.2}.
+\url{https://github.com/yspennstate/cech-hypercube-face-classes/tree/v1.3}.
 
 \section*{Declaration of generative AI and AI-assisted technologies}
 This paper is part of a research project on AI proving problems. Codex agents (OpenAI) produced the proof, and Claude
@@ -225,6 +227,8 @@ graphs}, Bull. Malays. Math. Sci. Soc. \textbf{47} (2024), no.~3, Paper No.~72,
 \href{https://doi.org/10.1007/s40840-024-01663-x}{doi:10.1007/s40840-024-01663-x}; \arxiv{2309.06222}.
 \bibitem{CT} J.~Conant and O.~Thistlethwaite, \emph{Boolean formulae, hypergraphs and combinatorial topology}, Topology
 Appl. \textbf{157} (2010), no.~16, 2449--2461.
+\bibitem{OddScales} Y.~Shmalo, \emph{Collapsibility numbers and high-degree homology of \v{C}ech complexes of hypercube
+graphs}, 2026, \href{https://doi.org/10.5281/zenodo.24569831}{doi:10.5281/zenodo.24569831}.
 \bibitem{OneStep} Y.~Shmalo, \emph{A one-step nullhomotopy for \v{C}ech complexes of hypercube graphs}, 2026,
 \href{https://doi.org/10.5281/zenodo.24548858}{doi:10.5281/zenodo.24548858}.
 \bibitem{MathBrainRepo} Y.~Shmalo, \emph{Math Brain: public snapshot, code and tests}, 2026,
