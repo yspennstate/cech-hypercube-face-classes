@@ -89,8 +89,9 @@ computed values: $6,24$ against $7,31$ for $\beta_2(\N(Q_n,2))$ with $n=3,4$, an
 $\beta_6(\N(Q_n,4))$ with $n=4,5$. The count $2^{n-p}\binom np$ includes every $p$-face; the sum in~\cite[Theorem~6.4]{AV}
 counts the faces whose fixed coordinates above the largest free coordinate are $0$, which for $n=4$, $p=3$ are $7$ of the
 $8$. That $\widetilde H_{2^p-2}(\N(Q_n,2p-2))$ is nonzero for $n\ge p$, the even half of~\cite[Question~7.2]{ASS} in this
-degree, already follows from the clamp of~\cite[Lemma~5.7]{ASS}, a simplicial retraction onto the complex of one face;
-what Theorem~\ref{thm:main} adds is the rank.
+degree, already follows from the clamp of~\cite[Lemma~5.7]{ASS}. That lemma is stated at scale three, but the clamp is a
+simplicial retraction onto the complex of one face at every scale (Remark~\ref{rem:clamp}). What Theorem~\ref{thm:main}
+adds is the rank.
 
 At odd scales the theorem is informative exactly when $\widetilde H_*(\N(Q_p,2p-3))\ne0$. By Lemma~\ref{lem:targets} the
 simplices of $\N(Q_p,2p-3)$ are the vertex sets whose complement contains an edge, so it is the Alexander dual of the
@@ -128,9 +129,9 @@ Fix $F=F(S,b)$ and write $\pi=\pi_F$, extended to all of $Q_n$ by restriction to
 $d(\pi x,\pi y)\le d(x,y)-1$ when $x\in F$ and $y\notin F$. We define $R_F(x)=\pi x$ for $x\in F$ and
 $R_F(x)=\kappa(\pi x)$ for $x\notin F$, where $\kappa\colon\{0,1\}^p\to\{0,1\}^p$ changes at most one bit and is chosen
 below; $R_F\circ i_F$ is the identity. The image of a set $A$ splits into the inside part $\pi(A\cap F)$ and the outside
-part $\kappa\pi(A\setminus F)$, which lies in the image $K$ of $\kappa$. In both cases the argument for another face
-$F'=F(S',b')$ starts from the same observation: if $S'=S$ then $b'\ne b$ and $F\cap F'=\emptyset$; otherwise $S'$
-contains a coordinate $i\in S$, and $\pi(F\cap F')$ lies in the facet $\{y:y_i=b'_i\}$ of $\{0,1\}^p$.
+part $\kappa\pi(A\setminus F)$, which lies in the image $K$ of $\kappa$. In both subsections below the argument for another face
+$F'=F(S',b')$ starts from the same observation: if $S'=S$ then $b'\ne b$ and $F\cap F'=\emptyset$; otherwise, since
+$|S'|=|S|$, there is a coordinate $i\in S\setminus S'$, and $\pi(F\cap F')$ lies in the facet $\{y:y_i=b'_i\}$ of $\{0,1\}^p$.
 
 \subsection*{Even scales}
 Let $r=2p-2$ with $p\ge2$, so $k=p-1$. Let $\kappa$ fix the words of even weight and flip the first coordinate of the
@@ -177,7 +178,7 @@ In every case $A$ is sent to a simplex, so $R_F$ is simplicial. For $F'\ne F$, t
 and, if $F\cap F'\ne\emptyset$, of words in a facet $\{y_i=b'_i\}$. By fact~3 the opposite facet contains an edge outside
 $K$, and both of its ends are missed. This completes the proof of Theorem~\ref{thm:main}.
 
-\begin{remark}
+\begin{remark}\label{rem:clamp}
 Without the correction, $R_F=\pi$ is the clamp of~\cite[Lemma~5.7]{ASS}. It is a graph map and is simplicial at every
 scale, but it maps every face $F'$ parallel to $F$ onto all of $\{0,1\}^p$, which is not a simplex; the one-bit
 correction is what makes the copies from different faces independent.
