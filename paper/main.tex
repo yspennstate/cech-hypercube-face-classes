@@ -91,7 +91,8 @@ counts the faces whose fixed coordinates above the largest free coordinate are $
 $8$. That $\widetilde H_{2^p-2}(\N(Q_n,2p-2))$ is nonzero for $n\ge p$, the even half of~\cite[Question~7.2]{ASS} in this
 degree, already follows from the clamp of~\cite[Lemma~5.7]{ASS}. That lemma is stated at scale three, but the clamp is a
 simplicial retraction onto the complex of one face at every scale (Remark~\ref{rem:clamp}). What Theorem~\ref{thm:main}
-adds is the rank.
+adds is the rank. It was proved in~\cite{OneStep} that the inclusion of $\N(Q_n,r)$ into $\N(Q_n,r+1)$ is
+null-homotopic for all $n$ and $r$; that result says where these classes die, at the next scale, but not how many there are.
 
 At odd scales the theorem is informative exactly when $\widetilde H_*(\N(Q_p,2p-3))\ne0$. By Lemma~\ref{lem:targets} the
 simplices of $\N(Q_p,2p-3)$ are the vertex sets whose complement contains an edge, so it is the Alexander dual of the
@@ -206,7 +207,7 @@ No data were generated or analysed in this work. A Python script that checks, fo
 in fourteen cases $(p,n)$ with $n\le6$, eight at even scale and six at odd scale, that $R_F$ is simplicial on the
 generators of~\cite[Lemma~2.2]{ASS} and that every other face is sent into one simplex, and that the uncorrected clamp
 fails the second test, is \texttt{code/check\_face\_retractions.py} at
-\url{https://github.com/yspennstate/cech-hypercube-face-classes/tree/v1.0}.
+\url{https://github.com/yspennstate/cech-hypercube-face-classes/tree/v1.2}.
 
 \section*{Declaration of generative AI and AI-assisted technologies}
 This paper is part of a research project on AI proving problems. Codex agents (OpenAI) produced the proof, and Claude
@@ -224,6 +225,8 @@ graphs}, Bull. Malays. Math. Sci. Soc. \textbf{47} (2024), no.~3, Paper No.~72,
 \href{https://doi.org/10.1007/s40840-024-01663-x}{doi:10.1007/s40840-024-01663-x}; \arxiv{2309.06222}.
 \bibitem{CT} J.~Conant and O.~Thistlethwaite, \emph{Boolean formulae, hypergraphs and combinatorial topology}, Topology
 Appl. \textbf{157} (2010), no.~16, 2449--2461.
+\bibitem{OneStep} Y.~Shmalo, \emph{A one-step nullhomotopy for \v{C}ech complexes of hypercube graphs}, 2026,
+\href{https://doi.org/10.5281/zenodo.24548858}{doi:10.5281/zenodo.24548858}.
 \bibitem{MathBrainRepo} Y.~Shmalo, \emph{Math Brain: public snapshot, code and tests}, 2026,
 \url{https://github.com/yspennstate/math-brain-public/tree/5427734deee9be643d6dfbdd5e7d4baeeefe4a4a}.
 \bibitem{MathBrainPaper} Y.~Shmalo, \emph{Math Brain: shared, auditable memory for multi-agent mathematical
